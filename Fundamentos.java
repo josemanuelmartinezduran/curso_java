@@ -38,8 +38,9 @@ public class Fundamentos {
         System.out.println("\n=== 2. OPERADORES ===");
         
         // Operadores Aritméticos
-        int a = 20;
+        int a = 20; //Operador de asignación no confundir con igual matemático
         int b = 7;
+	//String a = "Hola mundo";
         int suma = a + b;
         int resta = a - b;
         int multiplicacion = a * b;
