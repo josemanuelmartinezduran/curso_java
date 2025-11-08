@@ -1,4 +1,4 @@
-public class Ejemplos {
+class Ejemplos {
 	public static void main(String[] args) {
 		/*
 		 * int numeroEntero = 2147483647;
