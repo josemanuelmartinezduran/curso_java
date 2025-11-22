@@ -3,7 +3,7 @@ import java.util.*;
 public class Algoritmos {
     public static void main(String[] args){
         //Recu.RecurSerie(10);
-        Recu.RecurPrimos(2, true);
+        Recu.RecurFibonacci(10, 0);
     }
 }
 
@@ -31,7 +31,24 @@ class Recu{
         }
     }
 
-    public static void RecurPrimos(int n, boolean es_primo){ 
+    public static void RecurFibonacci(int max, int start){ //max=10  0 1 1 2 3 5 8 13 
+        //Paso 1 condición de paro
+        if(start == max)
+            return;
+        //Paso 3 logica
+        List<Integer> l = new ArrayList<Integer>();//l[0, 1, 1, 2, 3] start = 5               l.size() - 1 = 5
+        l.add(0);
+        l.add(1);
+        for(int i=0; i<(start-2); i++)
+            l.add(l.get(l.size()-1)+l.get(l.size()-2));
+        System.out.println(l.get(l.size()-1));
+        //Paso 2 llamada recursiva
+        Recu.RecurFibonacci(max, start + 1);
+    }
+
+    public static void RecurPrimos(int n){
+        //Si n vale 10 como puedo obtener cero
+        //Si n vale 9 como puedo obtener uno 
         // Paso 1 definir condición de paro
         if(n<2)
             return;
@@ -40,6 +57,19 @@ class Recu{
             return;
         }
         
+        //Paso 3 lógica del algoritmo (pensar que estoy en el ciclo)
+        boolean es_primo=true;
+        for(int j=(n-1); j>1; j--){ //ahora i  es n
+            if(n%j==0){//C1
+                es_primo = false;
+                break;
+            }
+        }
+        if(es_primo){
+            System.out.println(n);
+        }
+        //Paso 2 llamada recursiva
+        Recu.RecurPrimos(n - 1);
     }
 
 
